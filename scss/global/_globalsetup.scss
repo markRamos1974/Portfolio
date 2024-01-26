@@ -1,0 +1,37 @@
+/* Initial setup */
+:root{
+    --dark-blue: hsl(210, 11%, 15%);
+    --light-blue: hsl(206, 7%, 45%);
+    --white: hsl(210, 14%, 89%);
+    --display: 20.95625rem;              /* 335.3px */
+    --heading-100: 17.942rem;            /* 287.07px */
+    --heading-200: 11.089rem;            /* 177.42px */
+    --heading-300: 6.854rem;             /* 109.66px */
+    --heading-400: 4.236rem;             /* 67.77px */
+    --heading-500: 3.5rem;               /* 56px */
+    --heading-600: 2.618rem;             /* 41.89px */
+    --body-100: 1.618rem;                /* 25.89px */
+    --body-200: 1rem;                    /* 16px */
+    --body-300: 0.618rem;                /* 9.89px */
+    --body-400: 0.382rem;                /* 6.11px */
+    
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-size: 1rem;
+    margin: 0rem;
+    padding: 1rem;
+}
