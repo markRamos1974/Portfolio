@@ -1,0 +1,14 @@
+@forward './header';
+@forward './aboutMe';
+
+
+.landing-section {
+    position: relative;
+    width: 100%;
+}
+
+@media (min-width: 48em) {
+    .landing-section{
+        height: calc(100vh - 4rem);
+    }
+}

@@ -1,0 +1,103 @@
+
+.about-me{
+    position: relative;
+    height: calc((312px + 318.38px) - 110px);
+    padding-top: 5.125rem;
+   
+}
+
+.profile-section{
+    position: relative;
+    height: 100%;
+    margin-bottom: 10.25rem;
+}
+
+
+.profile-image{
+    background: url('../../assets/png/mobile/profile-image.png') no-repeat;
+    background-size: cover;
+    width: 12.875rem !important;
+    height: 19.5rem !important;
+    
+    margin-left: auto;
+}
+
+.greetings{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+   
+}
+.profile-section > .greetings > p{
+    font-family: "Nimbus";
+    color: var(--white);
+    font-size: var(--heading-300);
+}
+
+#name{
+    width: 14.6875rem;
+}
+
+
+.current-status-section > p {
+    width: 21.125rem;
+    margin: 0px auto;
+    font-family: "Nimbus";
+    font-size: var(--heading-400);
+    text-align: center;
+    color: var(--white);
+}
+
+.specialty-section{
+  
+    padding-top: 21.125rem;
+}
+
+.frontend-development-svg, .graphic-design-svg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.625rem;
+}
+
+#frontend {
+    width: 13.189375rem;
+}
+
+#development {
+    width: 20.165rem;
+}
+
+#graphic {
+    width: 11.4975rem;
+}
+
+#design {
+    width: 12.2575rem;
+}
+
+
+/* 768 px */
+@media (min-width: 48em) {
+    .about-me {
+        height: 100%;
+    }
+
+    .greetings {
+        transform: translateY(-50%);
+    }
+    .profile-image{
+        margin: 0px;
+        width: 24.9375rem !important;
+        height: 37.625rem !important;
+    }
+    .profile-section{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}

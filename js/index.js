@@ -1,3 +1,50 @@
+//Header parallax 
+const webfolio = document.querySelector(".webfolio")
+const header = document.querySelector(".header")
+
+window.addEventListener("scroll", () => {
+    let webfolioHeight = webfolio.getClientRects()[0].height;
+    let scrollValue = document.documentElement.scrollTop 
+ 
+    if(scrollValue >= webfolioHeight){
+        header.style.position = "fixed"
+        header.style.top = "0"
+       
+        if (document.documentElement.clientWidth < 768) header.style.width = "calc(100% - 2rem)"
+        else if (document.documentElement.clientWidth < 1280)  header.style.width = "calc(100% - 4rem)"
+        else  header.style.width = "calc(100% - 8rem)"
+
+        
+    }
+    else {
+        header.style.position = "static"
+        header.style.width = "100%"
+    }
+  
+})
+
+window.addEventListener('resize', () => {
+    let webfolioHeight = webfolio.getClientRects()[0].height;
+    let scrollValue = document.documentElement.scrollTop 
+ 
+    if(scrollValue >= webfolioHeight){
+        if (document.documentElement.clientWidth < 768) header.style.width = "calc(100% - 2rem)"
+        else if (document.documentElement.clientWidth < 1280)  header.style.width = "calc(100% - 4rem)"
+        else  header.style.width = "calc(100% - 8rem)"
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
 // const path = document.querySelector('path')
 // const pathLength = path.getTotalLength()
 

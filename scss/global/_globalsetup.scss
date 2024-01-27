@@ -17,7 +17,6 @@
     
 }
 
-
 html {
     box-sizing: border-box;
     font-size: 100%;
@@ -33,5 +32,65 @@ html {
 body{
     font-size: 1rem;
     margin: 0rem;
+    height: 16000px;
+    background-color: var(--dark-blue);
+}
+
+svg > path{
+    fill: var(--white);
+}
+
+a, .name {
+    text-decoration: none;
+    color: var(--light-blue);
+    font-family: "Monument Extended";
+    font-weight: normal;
+    font-size: var(--body-300);
+}
+
+a:hover, a:focus{
+    color: var(--white);
+}
+
+.path{
+   
+    stroke: 1px;
+    stroke: var(--white);
+    fill: transparent;
+
+}
+
+.wrapper{
     padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+
+
+/* 768 px */
+@media (min-width: 48em) {
+    .wrapper{
+        padding: 2rem;
+    }
+}
+
+/*1280px*/
+@media (min-width: 80em) { 
+    .wrapper{
+        padding: 4rem;
+    }
+}
+
+
+/*1440px*/
+@media (min-width: 90em) {
+   
+}
+
+
+/*1920px*/
+@media (min-width: 120em) {
+   
 }
