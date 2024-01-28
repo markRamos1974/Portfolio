@@ -1,0 +1,77 @@
+.services-offered{
+
+    width: 100%;
+    position: relative;
+    padding-top: 9.0625rem;
+ 
+}
+
+.service {
+
+    border-top: 1px solid var(--light-blue);
+    padding-top: 2rem;
+    padding-bottom: 4.875rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    
+}
+
+.service-number {
+    font-family: 'Monument Extended';
+    font-size: var(--body-200);
+    color: var(--light-blue)
+}
+
+.service-name {
+    font-family: 'Nimbus';
+    font-size: var(--heading-400);
+    color: var(--white);
+}
+
+
+/* 768 px */
+@media (min-width: 48em) {
+    .services-offered {
+        padding-top: 23.375rem;
+    }
+
+    .service-number{
+        font-size: var(--body-100);
+    }
+
+    .service-name {
+        font-size: var(--heading-300);
+    }
+}
+
+/*1280px*/
+@media (min-width: 80em) { 
+    .service {
+        padding-top: 4rem;
+        padding-bottom: 14.0625rem;
+    }
+
+    .service-number{
+        font-size: var(--body-100);
+    }
+
+    .service-name {
+        font-size: var(--heading-200);
+    }
+}
+
+
+/*1440px*/
+@media (min-width: 90em) {
+   .service-name {
+        font-size: var(--heading-100);
+   }
+}
+
+
+/*1920px*/
+@media (min-width: 120em) {
+   
+}

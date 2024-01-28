@@ -92,7 +92,6 @@ window.addEventListener('resize', () => {
 const path = document.querySelector('path')
 const pathLength = path.getTotalLength()
 
-console.log(path)
 path.style.strokeDasharray = pathLength;
 path.style.strokeDashoffset  = pathLength;
 path.style.transition = '5000ms ease-in-out'
