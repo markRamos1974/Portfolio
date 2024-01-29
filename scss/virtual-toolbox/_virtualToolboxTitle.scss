@@ -1,0 +1,47 @@
+.virtual-toolbox-section{
+    padding-top: 20.5rem;
+    
+   
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#virtual {
+    width: 10.93rem;
+    transform: translatey(20px);
+
+ 
+}
+
+.toolbox-title{
+    font-size: var(--heading-300);
+}
+
+
+/* 768 px */
+@media (min-width: 48em) {
+    #virtual {
+        width: 17.685625rem;
+    }
+
+    .toolbox-title {
+        font-size: var(--heading-100);
+    }
+}
+
+/*1280px*/
+@media (min-width: 80em) { 
+    #virtual {
+        width: 28.61375rem;
+        transform: translatey(50px);
+    }
+
+    .toolbox-title {
+        font-size: var(--display);
+    }
+}

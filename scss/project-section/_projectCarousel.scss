@@ -1,0 +1,44 @@
+.project-showcase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-top: 7.3125rem;
+}
+
+.project-showcase > p:nth-child(1) {
+    font-size: var(--heading-300);
+    transform: translateX(-2rem);
+
+}
+
+.project-showcase > p:nth-child(3){
+    align-self: flex-end;
+    margin-top: auto;
+    font-size: var(--heading-300);
+    width: 27.9375rem;
+    transform: translateX(9.5625rem);
+}
+
+.project-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:  calc(7.3125rem + 3rem);
+    z-index: 10;
+    
+    width: 100%;
+}
+
+.project-carousel > ul > li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.burger-bite-img, .space-tourism-img{
+    background: url('../../assets/png/mobile/burger-bite-web-mockup.png') no-repeat;
+    background-size: cover;
+
+    width: 21rem;
+    height: 12.6875rem; 
+}
