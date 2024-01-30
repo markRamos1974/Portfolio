@@ -1,6 +1,6 @@
 footer{
     display: none;
-    padding-bottom: 2rem;
+    padding-bottom: 2rem
 }
 
 footer > .social-media-links > ul > li {
@@ -27,6 +27,7 @@ footer > .social-media-links > ul > li {
         bottom: 0px;
         left: 2rem;
         right: 2rem;
+        z-index: 10;
        
         color: var(--white);
     }
