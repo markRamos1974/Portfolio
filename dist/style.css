@@ -742,7 +742,7 @@ footer > .social-media-links > ul > li a {
     margin-left: calc(100vw - 64.3125rem);
   }
   .burger-bite-img, .space-tourism-img {
-    background: url("../../assets/png/desktop1920px/burger-bite-mockup.png") no-repeat;
+    background: url("../assets/png/desktop1920px/burger-bite-mockup.png") no-repeat;
     background-size: cover;
   }
   .project-item > a > div {
