@@ -30,6 +30,8 @@ const arrowRight = document.querySelector(".arrow-right")
 console.log(arrowLeft)
 console.log(arrowRight)
 projectList.style.transition = "400ms ease-in-out"
+arrowLeft.style.stroke = "var(--dark-blue)";
+arrowRight.style.stroke = "var(--white)";
 let currentPosition = 0;
 let projectNumber = 1
 let mousePostionStart = 0;
@@ -49,7 +51,6 @@ const moveListBy = amount => {
 projectList.addEventListener("mousedown", (e) => {
     pressed = true
     mousePostionStart = e.clientX; 
-    this.style.cursor = "grabbing"
   
 })
 projectList.addEventListener("mouseup", (e) => {
@@ -79,12 +80,39 @@ projectList.addEventListener("mouseup", (e) => {
 
 
 arrowLeft.addEventListener("click", () => {
-    projectNumber--
-    moveListBy(document.documentElement.clientWidth)
+    arrowRight.style.stroke = "var(--white)"
+    
+    if(projectNumber == 1){
+        arrowLeft.style.stroke = "var(--dark-blue)";
+        return
+    }
+    else if(projectNumber == 2){
+        projectNumber--
+        arrowLeft.style.stroke = "var(--dark-blue)";
+        moveListBy(document.documentElement.clientWidth)
+    }
+    else {
+        projectNumber--
+        console.log(projectNumber)
+        arrowLeft.style.stroke = "var(--white)";
+        moveListBy(document.documentElement.clientWidth)
+    }
+    
 })
 arrowRight.addEventListener("click", () => {
-    projectNumber++
-    moveListBy(-document.documentElement.clientWidth)
+
+        if(projectNumber >= 4) {
+            arrowRight.style.stroke = "var(--dark-blue)"
+            return
+        }else {
+            projectNumber++
+            if(projectNumber == 4) arrowRight.style.stroke = "var(--dark-blue)"
+            arrowLeft.style.stroke = "var(--white)";
+            moveListBy(-document.documentElement.clientWidth)
+        }
+        
+    
+    
 })
 
 
