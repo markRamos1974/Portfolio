@@ -12,7 +12,7 @@
 
 
 .profile-image{
-    background: url('../../assets/png/mobile/profile-image.png') no-repeat;
+    background: url('../assets/png/mobile/profile-image.png') no-repeat;
     background-size: cover;
     width: 12.875rem !important;
     height: 19.5rem !important;
@@ -110,6 +110,7 @@
     }
     .profile-image{
         margin: 0px;
+        background: url('../assets/png/tablet-desktop1440px/profile-image.png') no-repeat;
         width: 24.9375rem !important;
         height: 37.625rem !important;
     }
@@ -215,6 +216,7 @@
     .profile-section{
         padding: 0rem 15rem;
     }
+
 }
 
 
@@ -226,6 +228,7 @@
     }
 
     .profile-image {
+        background: url('../assets/png/desktop1920px/profile-image.png') no-repeat;
         width: 33rem !important;
         height: 49.75rem !important; 
     }

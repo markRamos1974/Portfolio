@@ -43,7 +43,7 @@
 }
 
 .burger-bite-img, .space-tourism-img{
-    background: url('../../assets/png/mobile/burger-bite-web-mockup.png') no-repeat;
+    background: url('../assets/png/mobile/burger-bite-web-mockup.png') no-repeat;
     background-size: cover;
 
     width: 21rem;
@@ -67,6 +67,13 @@
         display: flex;
         justify-content: space-between;
     }
+
+    .burger-bite-img, .space-tourism-img{
+        background: url('../assets/png/tablet-desktop1440px/burger-bite-mockup.png') no-repeat;
+        background-size: cover;
+    }
+
+
     .project-tracker {
         
         display: block;
@@ -173,6 +180,11 @@
     .project-showcase > div:nth-child(3) > div > p {
         width: 84.9375rem;
         margin-left: calc((100vw - 21.4375rem * 3));
+    }
+
+    .burger-bite-img, .space-tourism-img{
+        background: url('../../assets/png/desktop1920px/burger-bite-mockup.png') no-repeat;
+        background-size: cover;
     }
 
     .project-item > a > div {
