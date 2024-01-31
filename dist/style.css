@@ -31,7 +31,6 @@ html {
 body {
   font-size: 1rem;
   margin: 0rem;
-  overflow-x: hidden;
   background-color: var(--dark-blue);
 }
 
@@ -67,11 +66,18 @@ p {
 }
 
 .wrapper {
+  scroll-behavior: smooth;
   padding: 1rem;
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
+  overflow-x: hidden;
+}
+
+.swiper {
+  width: 100vw !important;
+  height: 100vw !important;
 }
 
 /* 768 px */
@@ -689,43 +695,52 @@ footer > .social-media-links > ul > li a {
   .project-showcase > div:nth-child(3) {
     width: 100%;
     display: flex;
-  }
-  .project-showcase > div:nth-child(3) > .carousel-controls {
-    align-self: flex-end;
-    width: 200px !important;
-    display: flex;
-    margin-right: calc(100% - 44.9375rem + 9.568rem);
+    justify-content: end;
   }
   .project-showcase > div:nth-child(3) > div > p {
+    align-self: end;
     font-size: var(--heading-200);
     text-align: right;
     width: 44.9375rem;
-    transform: translateX(0rem);
+    transform: translateX(12.325rem);
   }
   .project-carousel {
     display: block !important;
     width: 400vw;
     top: 36.0625rem;
+    left: -2rem;
   }
   .project-carousel > ul {
-    width: 100%;
+    width: 100vw;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .project-carousel > ul {
+    -webkit-overflow-scrolling: touch;
+  }
+  .project-carousel > ul::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
   }
   .project-carousel > ul > li {
+    min-width: 100vw;
     margin-bottom: 0rem !important;
     margin: auto 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .project-item {
-    width: 100vw;
-  }
   .project-item > a > div {
     width: 41rem;
     height: 24.8125rem;
+  }
+  .arrow-left-path {
+    stroke: var(--light-blue);
+  }
+  .arrow-right-path {
+    stroke: var(--white);
   }
 }
 @media (min-width: 80em) {
@@ -739,7 +754,7 @@ footer > .social-media-links > ul > li a {
   }
   .project-showcase > div:nth-child(3) > div > p {
     width: 84.9375rem;
-    margin-left: calc(100vw - 64.3125rem);
+    margin-left: calc(100vw - 171.5rem);
   }
   .burger-bite-img, .space-tourism-img {
     background: url("../assets/png/desktop1920px/burger-bite-mockup.png") no-repeat;

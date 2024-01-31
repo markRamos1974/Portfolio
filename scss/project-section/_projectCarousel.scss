@@ -33,11 +33,11 @@
     align-items: center;
     position: absolute;
     top:  calc(7.3125rem + 3rem);
+   
     z-index: 10;
     
     width: 100%;
 }
-
 .project-carousel > ul > li:not(:last-child) {
     margin-bottom: 1rem;
 }
@@ -92,15 +92,9 @@
     .carousel-controls > .arrow-right {
         width: 2rem;
         height: 2rem;
-     
+       
         cursor: pointer;
     }
-
-    
-
-
-
-
 
     .carousel-controls > .arrow-left {
         margin-right: 2rem;
@@ -111,24 +105,18 @@
     .project-showcase > div:nth-child(3){
         width: 100%;
         display: flex;
-      
+        justify-content: end;
     }
 
-
-    .project-showcase > div:nth-child(3) >  .carousel-controls{
     
-        align-self: flex-end;
-        width: 200px !important;
-        display: flex;
-        margin-right: calc((100% - 44.9375rem) + 9.568rem);
-    }
-
-    .project-showcase > div:nth-child(3) > div > p {
     
+    .project-showcase > div:nth-child(3) > div>  p {
+        align-self: end;
         font-size: var(--heading-200);
         text-align: right;
         width: 44.9375rem;
-        transform: translateX(0rem);
+        transform: translateX(12.325rem);
+        
         
     }
 
@@ -136,17 +124,33 @@
         display: block !important;
         width: calc(100vw * 4);
         top:  calc(31.0625rem + 5rem);
+        left: -2rem;
+        
     }
 
     .project-carousel > ul {
-        width: 100%;
+        width: 100vw;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-     
+        overflow: auto;
+        scrollbar-width:none; //remove scrollbar from firefox
+        
     }
 
+    .project-carousel > ul {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    //remove scrollbar from chrome
+    .project-carousel > ul::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+
+   
+
     .project-carousel > ul > li {
+        min-width: 100vw;
         margin-bottom: 0rem !important;
         margin: auto 0rem;
         display: flex;
@@ -154,14 +158,17 @@
         align-items: center;
     
     }
-
-    .project-item {
-        width: 100vw;
-    }
-
     .project-item > a > div {
         width: 41rem;
         height: 24.8125rem;
+    }
+
+    .arrow-left-path {
+        stroke: var(--light-blue);
+    }
+    
+    .arrow-right-path{
+        stroke: var(--white);
     }
 
 }
@@ -179,7 +186,7 @@
     }
     .project-showcase > div:nth-child(3) > div > p {
         width: 84.9375rem;
-        margin-left: calc((100vw - 21.4375rem * 3));
+        margin-left: calc((100vw - 21.4375rem * 8));
     }
 
     .burger-bite-img, .space-tourism-img{
