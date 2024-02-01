@@ -2,4 +2,12 @@
 @forward './virtualToolboxTitle';
 @forward './techStack';
 
+.virtual-toolbox-section {
+    padding-bottom: 7.3125rem;
+}
 
+@media (min-width: 48em) {
+    .virtual-toolbox-section {
+        padding-bottom: 31.0625rem !important;
+    }
+}
