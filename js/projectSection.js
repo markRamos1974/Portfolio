@@ -7,7 +7,7 @@ const setCarouselToMobileView = (amount) => {
 }
 
 if(document.documentElement.clientWidth < 768){
-    setCarouselToMobileView(117);
+    setCarouselToMobileView(-20);
 }
 else if (document.documentElement.clientWidth < 1280){
     setCarouselToMobileView(70);
@@ -25,7 +25,7 @@ const toolbox = document.querySelector(".virtual-toolbox-section")
 
 window.addEventListener('resize', () => {
     if(document.documentElement.clientWidth < 768){
-        setCarouselToMobileView(117);
+        setCarouselToMobileView(-20);
     }
     else if (document.documentElement.clientWidth < 1280){
         landing.classList.remove("remove-container")

@@ -613,6 +613,10 @@ footer > .social-media-links > ul > li a {
     padding-bottom: 31.0625rem !important;
   }
 }
+.project-container {
+  height: 100%;
+}
+
 .project-showcase {
   position: relative;
   display: flex;
@@ -646,7 +650,7 @@ footer > .social-media-links > ul > li a {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 10.3125rem;
+  top: 3rem;
   z-index: 10;
   width: 100%;
 }
