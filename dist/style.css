@@ -660,8 +660,15 @@ footer > .social-media-links > ul > li a {
 
 /* 768 px */
 @media (min-width: 48em) {
+  .project-container {
+    height: calc(100vh - 8rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .project-showcase {
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
+    width: 100%;
   }
   .project-showcase > div:nth-child(1) > p:nth-child(1) {
     font-size: var(--heading-200);
@@ -781,6 +788,10 @@ footer > .social-media-links > ul > li a {
 }
 .hide-layout-section {
   display: none;
+}
+
+.remove-container {
+  height: 0rem !important;
 }
 
 .layout-section {
