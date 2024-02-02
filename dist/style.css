@@ -16,6 +16,10 @@
   --body-400: 0.382rem; /* 6.11px */
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 html {
   box-sizing: border-box;
   font-size: 100%;

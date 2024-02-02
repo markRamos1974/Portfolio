@@ -16,11 +16,24 @@ else {
     setCarouselToMobileView(100);
 }
 
+
+const webfolio = document.querySelector(".webfolio")
+const landing = document.querySelector(".landing-section")
+const aboutMe = document.querySelector(".about-me")
+const service = document.querySelector(".services-offered")
+const toolbox = document.querySelector(".virtual-toolbox-section")
+
 window.addEventListener('resize', () => {
     if(document.documentElement.clientWidth < 768){
         setCarouselToMobileView(117);
     }
     else if (document.documentElement.clientWidth < 1280){
+        landing.classList.remove("remove-container")
+        layoutSection.classList.remove("hide-layout-section") 
+        webfolio.classList.remove("hide-layout-section")
+        aboutMe.classList.remove("hide-layout-section")
+        service.classList.remove("hide-layout-section")
+        toolbox.classList.remove("hide-layout-section")
         setCarouselToMobileView(70);
     }
     else {
@@ -36,11 +49,7 @@ const slider = document.querySelector(".project-carousel > ul")
 const projectTracker = document.querySelector('.project-tracker')
 const layoutSection = document.querySelector('.layout-section')
 
-const webfolio = document.querySelector(".webfolio")
-const landing = document.querySelector(".landing-section")
-const aboutMe = document.querySelector(".about-me")
-const service = document.querySelector(".services-offered")
-const toolbox = document.querySelector(".virtual-toolbox-section")
+
 
 let startX;
 let velX;
@@ -74,6 +83,54 @@ slider.addEventListener("mousemove", (e) => {
     slide(e)
 })
 
+//Mobile touch
+// slider.onpointerdown = beginSliding;
+// slider.onpointerup = stopSliding;
+// slider.onpointmove = slide;
+slider.addEventListener("touchstart", (e) => {
+    cancelMomentumTracking()
+    beginSliding(e)
+   
+})
+slider.addEventListener("touchcancel", (e) => {
+    stopSliding(e)
+    beginMomentumTracking()
+})
+
+slider.addEventListener("touchend", (e) => {
+    stopSliding(e)
+    beginMomentumTracking()
+
+    if(slider.scrollLeft == slider.scrollWidth - document.documentElement.clientWidth){
+        console.log("visible")
+        layoutSection.classList.remove("hide-layout-section") 
+        slider.removeEventListener('wheel', scrollH, false);
+        slider.removeEventListener('DOMMouseScroll', scrollH, false);
+    } 
+    
+
+    else if(slider.scrollLeft  == 0){
+       
+        slider.removeEventListener('wheel', scrollH, false);
+        slider.removeEventListener('DOMMouseScroll', scrollH, false);
+        landing.classList.remove("remove-container")
+        webfolio.classList.remove("hide-layout-section")
+        aboutMe.classList.remove("hide-layout-section")
+        service.classList.remove("hide-layout-section")
+        toolbox.classList.remove("hide-layout-section")
+        const projectPosition = sliderContainer.getBoundingClientRect().top + window.scrollY 
+        window.scrollTo(0, projectPosition)
+        
+    } 
+})
+
+slider.addEventListener("touchmove", (e) => {
+
+    cancelMomentumTracking()
+    slide(e)
+})
+
+
 
 
 
@@ -86,7 +143,6 @@ const scrollH = (e) => {
     
 
     if(slider.scrollLeft == slider.scrollWidth - document.documentElement.clientWidth && delta == -1){
-        console.log("visible")
         layoutSection.classList.remove("hide-layout-section") 
         slider.removeEventListener('wheel', scrollH, false);
         slider.removeEventListener('DOMMouseScroll', scrollH, false);
@@ -119,20 +175,22 @@ const getElementPaddingSize = (element) => {
 }
 const observer = new IntersectionObserver (entries => {
     entries.forEach(entry => {  
-        console.log(entry)
-        if(entry.target.classList.contains("project-container") && entry.isIntersecting){
+        if(entry.target.classList.contains("project-container") && entry.isIntersecting && document.documentElement.clientWidth >= 1280){
           
             slider.addEventListener('wheel', scrollH, false);
             slider.addEventListener('DOMMouseScroll', scrollH, false);
+
             layoutSection.classList.add("hide-layout-section")
             landing.classList.add("remove-container")
             webfolio.classList.add("hide-layout-section")
             aboutMe.classList.add("hide-layout-section")
             service.classList.add("hide-layout-section")
             toolbox.classList.add("hide-layout-section")
+          
         }     
 
-        if (entry.target.classList.contains("layout-section") && !entry.isIntersecting) {
+        if (entry.target.classList.contains("layout-section") && !entry.isIntersecting && document.documentElement.clientWidth >= 1280) {
+
             layoutSection.classList.add("hide-layout-section")
             slider.addEventListener('wheel', scrollH, false);
             slider.addEventListener('DOMMouseScroll', scrollH, false);
@@ -147,8 +205,9 @@ observer.observe(layoutSection)
 
 
 const beginSliding = (e) => {
+    console.log("touch start")
     isMouseDown = true
-    startX = e.pageX - slider.offsetLeft
+    startX = (e.clientX || e.touches[0].clientX) - slider.offsetLeft
     scrollLeft = slider.scrollLeft
 }
 const stopSliding = (e) => {
@@ -159,9 +218,10 @@ const stopSliding = (e) => {
 const slide = (e) => {
     if(!isMouseDown) return
     e.preventDefault()
-    
-    const x = e.pageX - slider.offsetLeft;
+    const x = (e.clientX || e.touches[0].clientX) - slider.offsetLeft;
     const walk = (x - startX); //scroll-fast
+
+    console.log(e.touches[0].clientX)
     var prevScrollLeft = slider.scrollLeft
     slider.scrollLeft = (scrollLeft - walk)
     velX = slider.scrollLeft - prevScrollLeft; 

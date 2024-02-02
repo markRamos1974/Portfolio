@@ -13,8 +13,11 @@
     --body-100: 1.618rem;                /* 25.89px */
     --body-200: 1rem;                    /* 16px */
     --body-300: 0.618rem;                /* 9.89px */
-    --body-400: 0.382rem;                /* 6.11px */
-    
+    --body-400: 0.382rem;                /* 6.11px */ 
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 html {
