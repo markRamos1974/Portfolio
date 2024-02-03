@@ -76,9 +76,8 @@ p{
 
 .wrapper{
     scroll-behavior: smooth;
-    padding: 1rem;
+    padding: 0rem 1rem;
     width: 100%;
-    height: fit-content;
     position: relative;
     overflow-x: hidden;                         //  ==>  For project showcase text overlapping the main screen
     // overflow-x: hidden;
@@ -97,15 +96,13 @@ p{
 /* 768 px */
 @media (min-width: 48em) {
     .wrapper{
-        padding: 2rem;
+        padding: 0rem 2rem;
     }
 }
 
 /*1280px*/
 @media (min-width: 80em) { 
-    .wrapper{
-        padding: 2rem;
-    }
+   
 }
 
 

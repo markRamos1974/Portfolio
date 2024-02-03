@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
         */
         if(screenWitdth < 768) webfolioHeight += 16             //Mobile
         else if (screenWitdth < 1280) webfolioHeight += 32      //Tablet
-        else webfolioHeight += 64                               //Desktop from 1280px to 1920px and up
+        else webfolioHeight += 32                               //Desktop from 1280px to 1920px and up
         
     
         // Fixing header to top when after a specific scroll value when scrolling

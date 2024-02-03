@@ -1,6 +1,3 @@
-.project-container{
-    height: 100%;
-}
 .project-showcase {
     position: relative;
     display: flex;
@@ -12,20 +9,22 @@
     display: none;
 }
 
+//My Works
 .project-showcase > div:nth-child(1) > p {
     font-size: var(--heading-300);
     transform: translateX(-2rem);
 
 }
-.project-showcase > div:nth-child(3){
-    width: 27.9375rem;
-    align-self: flex-end;
+
+.project-showcase > div:nth-child(3) >  div{
+    display: flex;
+    justify-content: end;
 }
 .project-showcase > div:nth-child(3) >  div > p{
+    width: 27.9375rem;
     margin-top: auto;
     font-size: var(--heading-300);
-
-    transform: translateX(6.125rem);
+    transform: translateX(2rem);
 }
 
 .project-carousel {
@@ -55,7 +54,7 @@
 /* 768 px */
 @media (min-width: 48em) {
     .project-container{
-        height: calc(100vh - 8rem);
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -183,6 +182,7 @@
 
 
 @media (min-width: 80em) { 
+  
     .my-works-label,
     .project-showcase > div:nth-child(3) > div > p  {
         font-size: var(--display) !important;

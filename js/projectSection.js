@@ -83,10 +83,6 @@ slider.addEventListener("mousemove", (e) => {
     slide(e)
 })
 
-//Mobile touch
-// slider.onpointerdown = beginSliding;
-// slider.onpointerup = stopSliding;
-// slider.onpointmove = slide;
 slider.addEventListener("touchstart", (e) => {
     cancelMomentumTracking()
     beginSliding(e)
@@ -167,19 +163,21 @@ const scrollH = (e) => {
     projectTracker.innerHTML = `0${projectNumber} / 04`
 
 }
-const getElementPaddingSize = (element) => {
-    const elementStyle = window.getComputedStyle(element)
-    const arr = elementStyle.paddingTop.split("").filter(char => char == "." || Number(char))
-    const value = Number(arr.join(""))
-    return value
-}
 const observer = new IntersectionObserver (entries => {
+    const projectPosition = sliderContainer.getBoundingClientRect().top + window.scrollY 
     entries.forEach(entry => {  
-        if(entry.target.classList.contains("project-container") && entry.isIntersecting && document.documentElement.clientWidth >= 1280){
-          
+        if(
+
+            entry.target.classList.contains("project-container") && 
+            entry.isIntersecting && 
+            document.documentElement.clientWidth >= 1280 
+        
+        ){
+            console.log(entry.isIntersecting)
             slider.addEventListener('wheel', scrollH, false);
             slider.addEventListener('DOMMouseScroll', scrollH, false);
 
+            
             layoutSection.classList.add("hide-layout-section")
             landing.classList.add("remove-container")
             webfolio.classList.add("hide-layout-section")
@@ -189,7 +187,13 @@ const observer = new IntersectionObserver (entries => {
           
         }     
 
-        if (entry.target.classList.contains("layout-section") && !entry.isIntersecting && document.documentElement.clientWidth >= 1280) {
+        if (
+            
+            entry.target.classList.contains("layout-section") && 
+            !entry.isIntersecting && 
+            document.documentElement.clientWidth >= 1280
+
+        ) {
 
             layoutSection.classList.add("hide-layout-section")
             slider.addEventListener('wheel', scrollH, false);
