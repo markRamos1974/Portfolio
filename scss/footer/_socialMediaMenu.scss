@@ -1,16 +1,33 @@
 footer{
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    position: fixed;
+    bottom: 0px;
+    left: 2rem;
+    right: 2rem;
+    z-index: 10;
+       
+        color: var(--white);
+   
     padding-bottom: 2rem
 }
 
+footer > .social-media-links > ul > li:not(:last-child){
+    margin-bottom: 1rem;
+}
 footer > .social-media-links > ul > li {
     color: var(--white);  
     list-style: none;
-    margin-bottom: 1rem;
+  
     
     a {
         font-size: var(--body-200);
     }
+}
+
+.hide-footer {
+    display: none;
 }
 
 #logo{
@@ -20,16 +37,7 @@ footer > .social-media-links > ul > li {
 /* 768 px */
 @media (min-width: 48em) {
     footer{
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        position: fixed;
-        bottom: 0px;
-        left: 2rem;
-        right: 2rem;
-        z-index: 10;
-       
-        color: var(--white);
+        
     }
     
     

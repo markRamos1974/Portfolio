@@ -1,0 +1,68 @@
+.lets-talk-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding-top: 8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+
+}
+#project-in-mind{
+    width: 15.415rem;
+}
+
+#last-section-arrow {
+    margin-top: 4rem;
+    transform: translateX(5rem);
+}
+ 
+.lets-talk-section > p {
+    font-size: var(--heading-300);
+}
+
+/* 768 px */
+@media (min-width: 48em) {
+    .lets-talk-section{
+        padding-top: 0rem;
+        justify-content: center;
+    }
+    #last-section-arrow {
+        display: none;
+    }
+    
+    #project-in-mind{
+        width: 24.93875rem;
+    }
+
+    .lets-talk-section > p {
+        font-size: var(--heading-200);
+    }
+}
+
+/*1280px*/
+@media (min-width: 80em) { 
+  
+    #project-in-mind{
+        width: 40.35375rem;
+    }
+
+    .lets-talk-section > p {
+        font-size: var(--display);
+    }
+}
+
+
+/*1440px*/
+@media (min-width: 90em) {
+   
+}
+
+
+/*1920px*/
+@media (min-width: 120em) {
+   
+}
