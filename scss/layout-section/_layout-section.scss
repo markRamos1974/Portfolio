@@ -37,20 +37,17 @@
 }
 
 .design-item {
-    width: 21.125rem;
     margin-bottom: 2rem;
     position: relative;
 }
 
-.design-item > img {
-    width: 100%;
-}
+
 
 .details {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--white);
+    border-bottom: 0.1px solid var(--white);
 
     padding: 0.375rem 0rem;
     margin-bottom: 4px;
@@ -62,22 +59,89 @@
     color: var(--white);
 }
 
+
+
+.vision > .design-preview {
+    background: url("../assets/png/mobile/vision.png") no-repeat;
+    background-size: cover;
+}
+
+.hataz > .design-preview {
+    background: url("../assets/png/mobile/hataz.png");
+    background-size: cover;
+}
+
+.publication > .design-preview {
+    background: url("../assets/png/mobile/publication-materials.png") no-repeat;
+    background-size: cover;
+}
+
+.solidarity > .design-preview {
+    background: url("../assets/png/mobile/solidarity.png") no-repeat;
+    background-size: cover;
+}
+
+.dead-inside > .design-preview {
+    background: url("../assets/png/mobile/dead-inside.png") no-repeat;
+    background-size: cover;
+}
+
+.design-preview {
+    width: 21.12625rem;
+    height: 27.38125rem;
+}
+
 /* 768 px */
 @media (min-width: 48em) {
+    .vision > .design-preview {
+        background: url("../assets/png/tablet-desktop1440px/vision.png") no-repeat;
+        background-size: cover;
+    }
     
- 
+    .hataz > .design-preview {
+        background: url("../assets/png/tablet-desktop1440px/hataz.png");
+        background-size: cover;
+    }
+    
+    .publication > .design-preview {
+        background: url("../assets/png/tablet-desktop1440px/publication-materials.png") no-repeat;
+        background-size: cover;
+    }
+    
+    .solidarity > .design-preview {
+        background: url("../assets/png/tablet-desktop1440px/solidarity.png") no-repeat;
+        background-size: cover;
+    }
+    
+    .dead-inside > .design-preview {
+        background: url("../assets/png/tablet-desktop1440px/dead-inside.png") no-repeat;
+        background-size: cover;
+    }
 
+    .graphic-designs {
+        justify-content: end;
+    }
+   
     .design-flex {
+       
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
         
     }
-
-    .left {
-        margin-right: 1.1875rem;
+    
+    .design-item {
+        width: 16.2525rem;
+        margin-bottom: 6.3125rem;
+        position: relative;
     }
+
+    .details {
+        margin-bottom: 10px;
+    }
+
+   
 
     .design-title > p {
         font-size: var(--heading-200) !important;
@@ -88,22 +152,66 @@
         transform: translateY(30px);
     }
 
+     
+    .design-preview {
+        width: 16.2525rem;
+        height: 20.43625rem;
+    }
+
+    .solidarity > .design-preview{
+        height: 21.375625rem;
+    }
+
+    .publication {
+        margin-bottom: 0rem !important;
+    }
+
+
     .left {
         margin-right: 2rem;
     }
 
-    .design-flex > div > ul,
-    .design-flex > div > ul > li {
-        width: 30.414375rem !important;
-    }
+
 
     .details > p {
-        font-size: var(--body-200);
+        font-size: var(--body-400) !important;
     }
 }
 
 /*1280px*/
 @media (min-width: 80em) { 
+    .vision > .design-preview {
+        background: url("../assets/png/desktop1920px/vision.png") no-repeat;
+        background-size: cover;
+    }
+    
+    .hataz > .design-preview {
+        background: url("../assets/png/desktop1920px/hataz.png");
+        background-size: cover;
+    }
+    
+    .publication > .design-preview {
+        background: url("../assets/png/desktop1920px/publication-materials.png") no-repeat;
+        background-size: cover;
+    }
+    
+    .solidarity > .design-preview {
+        background: url("../assets/png/desktop1920px/solidarity.png") no-repeat;
+        background-size: cover;
+    }
+    
+    .dead-inside > .design-preview {
+        background: url("../assets/png/desktop1920px/dead-inside.png") no-repeat;
+        background-size: cover;
+    }
+
+    .details {
+        margin-bottom: 1rem;
+    }
+
+    .details > p {
+        font-size: var(--body-200) !important;
+    }
 
     .graphic-designs {
         display: flex;
@@ -121,8 +229,23 @@
     }
 
     #random {
-        width: 16.48rem !important; 
+        width: 26.663125rem !important; 
         transform: translateY(30px);
+    }
+
+    .left,
+    .right,
+    .left > ul > li,
+    .right > ul > li  {
+        width: 30.414375rem;
+    }
+    .design-preview {
+        width: 30.414375rem;
+        height: 38.244375rem;
+    }
+
+    .solidarity > .design-preview{
+        height: 41.42133333333333rem;
     }
 
     .design-item:not(:last-child) {
@@ -137,8 +260,19 @@
         margin-right: 2.875rem;
     }
 
-    .design-flex > div > ul,
-    .design-flex > div > ul > li {
-        width: 42rem !important;
+    .left,
+    .right,
+    .left > ul > li,
+    .right > ul > li {
+        width: 42rem;
+    }
+
+    .design-preview {
+        width: 42rem;
+        height: 52.8125rem;
+    }
+
+    .solidarity > .design-preview{
+        height: 53.625rem;
     }
 }

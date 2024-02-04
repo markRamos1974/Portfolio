@@ -94,36 +94,41 @@ slider.addEventListener("touchcancel", (e) => {
 })
 
 slider.addEventListener("touchend", (e) => {
-    stopSliding(e)
-    beginMomentumTracking()
+    if(document.documentElement.clientWidth >= 1280){
+        stopSliding(e)
+        beginMomentumTracking()
 
-    if(slider.scrollLeft == slider.scrollWidth - document.documentElement.clientWidth){
-        console.log("visible")
-        layoutSection.classList.remove("hide-layout-section") 
-        slider.removeEventListener('wheel', scrollH, false);
-        slider.removeEventListener('DOMMouseScroll', scrollH, false);
-    } 
+        if(slider.scrollLeft == slider.scrollWidth - document.documentElement.clientWidth){
     
-
-    else if(slider.scrollLeft  == 0){
-       
-        slider.removeEventListener('wheel', scrollH, false);
-        slider.removeEventListener('DOMMouseScroll', scrollH, false);
-        landing.classList.remove("remove-container")
-        webfolio.classList.remove("hide-layout-section")
-        aboutMe.classList.remove("hide-layout-section")
-        service.classList.remove("hide-layout-section")
-        toolbox.classList.remove("hide-layout-section")
-        const projectPosition = sliderContainer.getBoundingClientRect().top + window.scrollY 
-        window.scrollTo(0, projectPosition)
+            layoutSection.classList.remove("hide-layout-section") 
+            slider.removeEventListener('wheel', scrollH, false);
+            slider.removeEventListener('DOMMouseScroll', scrollH, false);
+        } 
         
-    } 
+
+        else if(slider.scrollLeft  == 0){
+        
+            slider.removeEventListener('wheel', scrollH, false);
+            slider.removeEventListener('DOMMouseScroll', scrollH, false);
+            landing.classList.remove("remove-container")
+            webfolio.classList.remove("hide-layout-section")
+            aboutMe.classList.remove("hide-layout-section")
+            service.classList.remove("hide-layout-section")
+            toolbox.classList.remove("hide-layout-section")
+            const projectPosition = sliderContainer.getBoundingClientRect().top + window.scrollY 
+            window.scrollTo(0, projectPosition)
+            
+        } 
+    }
+    
 })
 
 slider.addEventListener("touchmove", (e) => {
+    if(document.documentElement.clientWidth >= 1280){
+        cancelMomentumTracking()
+        slide(e)
+    } 
 
-    cancelMomentumTracking()
-    slide(e)
 })
 
 
@@ -137,27 +142,31 @@ const scrollH = (e) => {
     let delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
     slider.scrollLeft -= (delta * 150);
     
-
-    if(slider.scrollLeft == slider.scrollWidth - document.documentElement.clientWidth && delta == -1){
-        layoutSection.classList.remove("hide-layout-section") 
-        slider.removeEventListener('wheel', scrollH, false);
-        slider.removeEventListener('DOMMouseScroll', scrollH, false);
-    } 
-    
-
-    else if(slider.scrollLeft == 0 && delta == 1){
-       
-        slider.removeEventListener('wheel', scrollH, false);
-        slider.removeEventListener('DOMMouseScroll', scrollH, false);
-        landing.classList.remove("remove-container")
-        webfolio.classList.remove("hide-layout-section")
-        aboutMe.classList.remove("hide-layout-section")
-        service.classList.remove("hide-layout-section")
-        toolbox.classList.remove("hide-layout-section")
-        const projectPosition = sliderContainer.getBoundingClientRect().top + window.scrollY 
-        window.scrollTo(0, projectPosition)
+    if (document.documentElement.clientWidth >= 1280){
+        console.log(true)
+        if(slider.scrollLeft == slider.scrollWidth - document.documentElement.clientWidth && delta == -1){
+            layoutSection.classList.remove("hide-layout-section") 
+            slider.removeEventListener('wheel', scrollH, false);
+            slider.removeEventListener('DOMMouseScroll', scrollH, false);
+        } 
         
-    } 
+    
+        else if(slider.scrollLeft == 0 && delta == 1){
+           
+            slider.removeEventListener('wheel', scrollH, false);
+            slider.removeEventListener('DOMMouseScroll', scrollH, false);
+            landing.classList.remove("remove-container")
+            webfolio.classList.remove("hide-layout-section")
+            aboutMe.classList.remove("hide-layout-section")
+            service.classList.remove("hide-layout-section")
+            toolbox.classList.remove("hide-layout-section")
+            const projectPosition = sliderContainer.getBoundingClientRect().top + window.scrollY 
+            window.scrollTo(0, projectPosition)
+            
+        } 
+    }
+
+    
     
     projectNumber =  Math.round(slider.scrollLeft / document.documentElement.clientWidth) + 1
     projectTracker.innerHTML = `0${projectNumber} / 04`
@@ -173,7 +182,7 @@ const observer = new IntersectionObserver (entries => {
             document.documentElement.clientWidth >= 1280 
         
         ){
-            console.log(entry.isIntersecting)
+  
             slider.addEventListener('wheel', scrollH, false);
             slider.addEventListener('DOMMouseScroll', scrollH, false);
 
@@ -207,9 +216,8 @@ const observer = new IntersectionObserver (entries => {
 observer.observe(sliderContainer)
 observer.observe(layoutSection)
 
-
 const beginSliding = (e) => {
-    console.log("touch start")
+
     isMouseDown = true
     startX = (e.clientX || e.touches[0].clientX) - slider.offsetLeft
     scrollLeft = slider.scrollLeft
@@ -225,12 +233,9 @@ const slide = (e) => {
     const x = (e.clientX || e.touches[0].clientX) - slider.offsetLeft;
     const walk = (x - startX); //scroll-fast
 
-    console.log(e.touches[0].clientX)
     var prevScrollLeft = slider.scrollLeft
     slider.scrollLeft = (scrollLeft - walk)
     velX = slider.scrollLeft - prevScrollLeft; 
-   
-    
 }
 function beginMomentumTracking(){
     cancelMomentumTracking();
