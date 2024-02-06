@@ -4,12 +4,10 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 1.5625rem;
     z-index: 200;
 
-    
 }
-
 
 .header-left{
     display: flex;
@@ -33,7 +31,6 @@
     margin-right: 6.3125rem;
 }
 
-
 .hamburger{
     display: flex;
     flex-direction: column;
@@ -51,14 +48,16 @@
     width:  2.75rem;
     margin-bottom: 3px; 
 }
+
 .hamburger > div:nth-child(2){
     width: 1.375rem;
 }
 
-
 /* 768 px */
 @media (min-width: 48em) {
-    
+    .header{
+        margin-top: 2rem;    
+    }
     .service-offer, .email{
         display: block;
     }
@@ -70,7 +69,6 @@
 
 /*1280px*/
 @media (min-width: 80em) { 
-   
     .header > .header-left > .service-offer > p,
     .header > .header-right > .email > p, a{
         font-size: var(--body-200);
@@ -83,8 +81,7 @@
 
 
 /*1440px*/
-@media (min-width: 90em) {
-   
+@media (min-width: 90em) { 
     .name {
         margin-right: 11.5rem;
     }
@@ -93,7 +90,6 @@
 
 /*1920px*/
 @media (min-width: 120em) {
-    
     .name{
         margin-right: 26.5rem;
     }

@@ -1,35 +1,30 @@
 //Header parallax 
 const webfolio = document.querySelector(".webfolio")
 const header = document.querySelector(".header")
+const footer = document.querySelector("footer")
 
 
-window.addEventListener("scroll", () => {
-
+const handleHeaderScroll = () => {
+    footer.classList.toggle("hide-footer", document.documentElement.clientWidth < 768)
     if(!webfolio.classList.contains("hide-layout-section")){
-
         let screenWitdth = document.documentElement.clientWidth
-        let webfolioHeight = webfolio.getClientRects()[0].height || null
+        let webfolioHeight = webfolio.getClientRects()[0].height
+        let headerHeight = header.getClientRects()[0].height
         let scrollValue = document.documentElement.scrollTop 
-    
+   
         /*
             Adding padding in px for specific screen sizes to prevent sudden clip from
             parrallax scrolling for header
         */
-        if(screenWitdth < 768) webfolioHeight += 16             //Mobile
-        else if (screenWitdth < 1280) webfolioHeight += 32      //Tablet
-        else webfolioHeight += 32                               //Desktop from 1280px to 1920px and up
-        
-    
+
         // Fixing header to top when after a specific scroll value when scrolling
         if(scrollValue >= webfolioHeight){
     
             /* 
-    
                 preventing main content section from sudden clip
                 when scrolled to a specific value
-    
             */ 
-            webfolio.style.marginBottom = "calc(24px + 12px)" 
+            webfolio.style.marginBottom = `${headerHeight}px`
     
             //Fixing header to top of the page
             header.style.position = "fixed"
@@ -41,17 +36,18 @@ window.addEventListener("scroll", () => {
             */
     
             // Mobile view
-            if (document.documentElement.clientWidth < 768) 
+
+                
+            if (screenWitdth < 768) 
                 header.style.width = "calc(100% - 2rem)"
             // Tablet view
-            else if (document.documentElement.clientWidth < 1280)  
+            else if (screenWitdth < 1280)  
                 header.style.width = "calc(100% - 4rem)"
             // Desktop view
             else  
-                header.style.width = "calc(100% - 4rem)"
-    
-            
+                header.style.width = "calc(100% - 8rem)"
         }
+
         else {
             //returns to default state then scrolled back to the top of the page
             webfolio.style.marginBottom = "0px"
@@ -59,35 +55,12 @@ window.addEventListener("scroll", () => {
             header.style.width = "100%"
         }
     }
-    
-  
-})
+}
+
 
 // Adapting header to screen resize when scrolling and header is fixed on top
-window.addEventListener('resize', () => {
-
-    if(!webfolio.classList.contains("hide-layout-section")) {
-
-        let webfolioHeight = webfolio.getClientRects()[0].height;
-        let scrollValue = document.documentElement.scrollTop 
-        
-    
-        if(scrollValue >= webfolioHeight){
-    
-            // Mobile view
-            if (document.documentElement.clientWidth < 768) 
-                header.style.width = "calc(100% - 2rem)"
-            // Tablet view
-            else if (document.documentElement.clientWidth < 1280)  
-                header.style.width = "calc(100% - 4rem)"
-            // Desktop
-            else  
-                header.style.width = "calc(100% - 4rem)"
-        }
-    }
-})
-
-
+window.addEventListener('resize', handleHeaderScroll)
+window.addEventListener("scroll", handleHeaderScroll)
 
 
 

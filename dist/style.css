@@ -61,6 +61,7 @@ a:hover, a:focus {
 p {
   font-family: "Nimbus";
   color: var(--white);
+  line-height: 85.7%;
 }
 
 .path {
@@ -89,6 +90,11 @@ p {
   }
 }
 /*1280px*/
+@media (min-width: 80em) {
+  .wrapper {
+    padding: 0rem 4rem;
+  }
+}
 /*1440px*/
 /*1920px*/
 @font-face {
@@ -124,7 +130,7 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 1.5625rem;
   z-index: 200;
 }
 
@@ -174,6 +180,9 @@ p {
 
 /* 768 px */
 @media (min-width: 48em) {
+  .header {
+    margin-top: 2rem;
+  }
   .service-offer, .email {
     display: block;
   }
@@ -465,7 +474,6 @@ footer > .social-media-links > ul > li a {
   width: 3.5rem;
 }
 
-/* 768 px */
 .services-offered {
   width: 100%;
   position: relative;
@@ -1071,4 +1079,22 @@ footer > .social-media-links > ul > li a {
   }
 }
 /*1440px*/
-/*1920px*//*# sourceMappingURL=style.css.map */
+/*1920px*/
+.cursor {
+  display: none;
+}
+
+/*1280px*/
+@media (min-width: 80em) {
+  .cursor {
+    transition: 500ms ease-in forwards;
+    mix-blend-mode: difference;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 100px;
+  }
+}/*# sourceMappingURL=style.css.map */

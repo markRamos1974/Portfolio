@@ -59,30 +59,65 @@ let momentumID;
 let isMouseDown = false
 
 
+const beginSliding = (e) => {
+
+    isMouseDown = true
+    startX = (e.clientX || e.touches[0].clientX) - slider.offsetLeft
+    scrollLeft = slider.scrollLeft
+}
+const stopSliding = (e) => {
+    
+    isMouseDown = false
+    return
+}
+const slide = (e) => {
+    if(!isMouseDown) return
+    e.preventDefault()
+    const x = (e.clientX || e.touches[0].clientX) - slider.offsetLeft;
+    const walk = (x - startX); //scroll-fast
+
+    var prevScrollLeft = slider.scrollLeft
+    slider.scrollLeft = (scrollLeft - walk)
+    velX = slider.scrollLeft - prevScrollLeft; 
+}
+function beginMomentumTracking(){
+    cancelMomentumTracking();
+    momentumID = requestAnimationFrame(momentumLoop);
+}
+function cancelMomentumTracking(){
+    cancelAnimationFrame(momentumID);
+}
+function momentumLoop(){
+    slider.scrollLeft += velX;
+    velX *= 0.95; 
+    if (Math.abs(velX) > 0.5){
+        momentumID = requestAnimationFrame(momentumLoop);
+    }
+
+    projectNumber =  Math.round(slider.scrollLeft / document.documentElement.clientWidth) + 1
+    projectTracker.innerHTML = `0${projectNumber} / 04`
+}
+
 
 slider.addEventListener("mousedown", (e)=> {
     cancelMomentumTracking()
     beginSliding(e)
 }) 
-
 slider.addEventListener("mouseleave", (e) => {
     if(isMouseDown) {
         stopSliding(e)
         beginMomentumTracking()
     }  
 })
-
 slider.addEventListener("mouseup", (e) => {
     stopSliding(e)
     beginMomentumTracking()
 })
-
 slider.addEventListener("mousemove", (e) => {
     if(!isMouseDown) return
     cancelMomentumTracking()
     slide(e)
 })
-
 slider.addEventListener("touchstart", (e) => {
     cancelMomentumTracking()
     beginSliding(e)
@@ -92,7 +127,6 @@ slider.addEventListener("touchcancel", (e) => {
     stopSliding(e)
     beginMomentumTracking()
 })
-
 slider.addEventListener("touchend", (e) => {
     if(document.documentElement.clientWidth >= 1280){
         stopSliding(e)
@@ -122,7 +156,6 @@ slider.addEventListener("touchend", (e) => {
     }
     
 })
-
 slider.addEventListener("touchmove", (e) => {
     if(document.documentElement.clientWidth >= 1280){
         cancelMomentumTracking()
@@ -215,44 +248,4 @@ const observer = new IntersectionObserver (entries => {
 })
 observer.observe(sliderContainer)
 observer.observe(layoutSection)
-
-const beginSliding = (e) => {
-
-    isMouseDown = true
-    startX = (e.clientX || e.touches[0].clientX) - slider.offsetLeft
-    scrollLeft = slider.scrollLeft
-}
-const stopSliding = (e) => {
-    
-    isMouseDown = false
-    return
-}
-const slide = (e) => {
-    if(!isMouseDown) return
-    e.preventDefault()
-    const x = (e.clientX || e.touches[0].clientX) - slider.offsetLeft;
-    const walk = (x - startX); //scroll-fast
-
-    var prevScrollLeft = slider.scrollLeft
-    slider.scrollLeft = (scrollLeft - walk)
-    velX = slider.scrollLeft - prevScrollLeft; 
-}
-function beginMomentumTracking(){
-    cancelMomentumTracking();
-    momentumID = requestAnimationFrame(momentumLoop);
-}
-function cancelMomentumTracking(){
-    cancelAnimationFrame(momentumID);
-}
-function momentumLoop(){
-    slider.scrollLeft += velX;
-    velX *= 0.95; 
-    if (Math.abs(velX) > 0.5){
-        momentumID = requestAnimationFrame(momentumLoop);
-    }
-
-    projectNumber =  Math.round(slider.scrollLeft / document.documentElement.clientWidth) + 1
-    projectTracker.innerHTML = `0${projectNumber} / 04`
-}
-
 

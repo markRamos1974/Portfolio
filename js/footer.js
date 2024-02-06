@@ -6,7 +6,8 @@ const lastSection = document.querySelector(".lets-talk-section")
 const footerObserver = new IntersectionObserver(entries => {
     
     entries.forEach(entry => {
-        footer.classList.toggle("hide-footer", !entry.isIntersecting)
+        if(document.documentElement.clientWidth < 768)
+            footer.classList.toggle("hide-footer", !entry.isIntersecting)
     })
 
 }, {

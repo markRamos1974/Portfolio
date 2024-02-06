@@ -1,0 +1,22 @@
+.cursor {
+
+    display: none;
+}
+/*1280px*/
+@media (min-width: 80em) {
+    .cursor {
+        transition: 500ms ease-in forwards;
+        mix-blend-mode: difference;
+        display: block;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        // z-index: 1000;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius:  100px;
+    }
+    
+}
+
+
