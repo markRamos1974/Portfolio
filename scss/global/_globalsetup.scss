@@ -14,6 +14,7 @@
     --body-200: 1rem;                    /* 16px */
     --body-300: 0.618rem;                /* 9.89px */
     --body-400: 0.382rem;                /* 6.11px */ 
+    --line-height: 85.7%;
 }
 
 ::-webkit-scrollbar {
@@ -64,7 +65,7 @@ a:hover, a:focus{
 p{
     font-family: 'Nimbus';
     color: var(--white);
-    line-height: 85.7%;
+    line-height: var(--line-height);
 }
 
 .path{

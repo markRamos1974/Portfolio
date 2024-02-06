@@ -1,19 +1,32 @@
 @forward './header';
 @forward './aboutMe';
 
-
+/* Main container of this section */
 .landing-section {
     position: relative;
     width: 100%;
 }
+/* Main container of this section */
 
 .webfolio {
     padding-top: 1rem;
 }
 
+
+/* 768px */
 @media (min-width: 48em) {
+
+    .webfolio {
+        padding-top: 2rem;
+    }
+    
+}
+
+/* 1280 */
+@media (min-width: 80em) {
+
     .landing-section{
-        height: calc(100vh - 4rem);
+        height: 100vh;
     }
 
     .webfolio {

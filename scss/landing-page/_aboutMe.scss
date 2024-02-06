@@ -1,40 +1,53 @@
-
+/* Main Container of this section */
 .about-me{
+
     padding-top: 5.125rem;
-   
+
 }
 
+/*Profile Section under about me*/
+/*Profile Section under about me*/
 .profile-section{
-    height: calc((312px + 318.38px) - 200px);
-    position: relative;
-    margin-bottom: 10.25rem;
-}
 
+    position: relative;
+    height: 27.75rem;
+    margin-bottom: 10.25rem;
+
+}
 
 .profile-image{
+
     background: url('../assets/png/mobile/profile-image.png') no-repeat;
     background-size: cover;
-    width: 12.875rem !important;
-    height: 19.5rem !important;
-    
+    width: 12.875rem;
+    height: 19.5rem;
     margin-left: auto;
+
 }
 
-.greetings{
+.greetings {
+
     position: absolute;
     bottom: 0;
     left: 0;
-   
+
 }
-.profile-section > .greetings > p{
-    font-family: "Nimbus";
-    color: var(--white);
+
+.greetings > p {
+
     font-size: var(--heading-300);
+
 }
 
 #name{
-    width: 14.6875rem;
+
+    width: 14.584375rem;
+    margin-top: 1rem;
+
 }
+/*Profile Section under about me*/
+/*Profile Section under about me*/
+
 
 .current-status-section > p, .current-status-section >  div > p {
  
@@ -72,16 +85,6 @@
 }
 
 
-
-// #frontend, #development, #graphic, #design{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-//     margin-top: 0.625rem;
-// }
-
 #frontend {
     width: 13.189375rem;
 }
@@ -101,19 +104,14 @@
 
 /* 768 px */
 @media (min-width: 48em) {
+
     .about-me {
         height: 100%;
     }
-
     .greetings {
         transform: translateY(-50%);
     }
-    .profile-image{
-        margin: 0px;
-        background: url('../assets/png/tablet-desktop1440px/profile-image.png') no-repeat;
-        width: 24.9375rem !important;
-        height: 37.625rem !important;
-    }
+
     .profile-section{
         display: flex;
         flex-direction: row-reverse;
@@ -123,6 +121,17 @@
         height: 100%;
         margin-bottom: 24rem;
     }
+    
+    .profile-image{
+        margin: 0px;
+        background: url('../assets/png/tablet-desktop1440px/profile-image.png') no-repeat;
+        width: 24.9375rem;
+        height: 37.625rem;
+    }
+
+
+
+   
 
     .current-status-section > p{
         width: 100%;
@@ -174,22 +183,41 @@
 
 /*1280px*/
 @media (min-width: 80em) { 
-    #name{
-        width: 23.59625rem;
-    }
+    
+
+    /*Profile Section under about me*/
+    /*Profile Section under about me*/
     .greetings{
         position: static;
         transform: translateY(0px);
     }
-    .greetings > p {
-        font-size: var(--heading-200) !important;
-    }
+    
     .profile-section{
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 35.75rem;
     }
+
+    .profile-image {
+        background-size: cover;
+        width: 33rem;
+        height: 49.75rem;
+    }
+
+    .greetings > p {
+        font-size: var(--heading-200);
+    }
+
+    #name{
+        width: 23.59625rem;
+        margin-top: 2.875rem;
+    }
+    /*Profile Section under about me*/
+    /*Profile Section under about me*/
+
+
+
 
     .current-status-section {
 
@@ -212,16 +240,25 @@
 }
 
 /*1440px*/
-@media (min-width: 94em) {
-    .profile-section{
-        padding: 0rem 15rem;
-    }
-
+@media (min-width: 90em) {
+    
 }
 
 
-/*1920px*/
-@media (min-width: 120em) {
+/*1600px*/
+@media (min-width: 100em) {
+   
+    .about-me {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-section{
+        width: 90rem;
+    }
+
 
     .greetings {
         left: 15rem;

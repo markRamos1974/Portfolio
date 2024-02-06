@@ -36,16 +36,13 @@ const handleHeaderScroll = () => {
             */
     
             // Mobile view
+            if (screenWitdth < 768) header.style.width = "calc(100% - 2rem)"
 
-                
-            if (screenWitdth < 768) 
-                header.style.width = "calc(100% - 2rem)"
             // Tablet view
-            else if (screenWitdth < 1280)  
-                header.style.width = "calc(100% - 4rem)"
+            else if (screenWitdth < 1280) header.style.width = "calc(100% - 4rem)"
+             
             // Desktop view
-            else  
-                header.style.width = "calc(100% - 8rem)"
+            else header.style.width = "calc(100% - 8rem)"
         }
 
         else {

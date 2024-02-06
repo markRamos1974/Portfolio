@@ -8,9 +8,9 @@ footer{
     right: 2rem;
     z-index: 10;
        
-        color: var(--white);
+    color: var(--white);
    
-    padding-bottom: 2rem
+    padding-bottom: 1.5625rem;
 }
 
 footer > .social-media-links > ul > li:not(:last-child){
@@ -32,6 +32,26 @@ footer > .social-media-links > ul > li {
 
 #logo{
     width: 3.5rem;
+}
+
+
+/* 768 px */
+@media (min-width: 48em) {
+    footer{
+        padding-bottom: 2rem;
+        left: 2rem;
+        right: 2rem;   
+    }
+  
+}
+
+/* 1280 px */
+@media (min-width: 80em) {
+    footer{
+        left: 4rem;
+        right: 4rem;   
+    }
+  
 }
 
 

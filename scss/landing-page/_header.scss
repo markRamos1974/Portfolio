@@ -3,33 +3,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     width: 100%;
-    margin-top: 1.5625rem;
     z-index: 200;
 
+    padding-top: 1.5625rem;
+
 }
 
-.header-left{
-    display: flex;
-}
-
-.email > p {
-    text-align: right;
-}
-
-.header-left > .service-offer > p,  .header-right > .email > p, a{
+.header-left > .service-offer > p,  
+.header-right > .email > p, 
+a {
     font-family: "Monument Extended";
     font-size: var(--body-300);
     color: var(--light-blue);
 }
 
-.service-offer, .email{
+
+
+/* Hides header's right section from mobile view*/
+.service-offer, 
+.email {
     display: none;
 }
 
-.name{
-    margin-right: 6.3125rem;
-}
 
 .hamburger{
     display: flex;
@@ -55,10 +52,25 @@
 
 /* 768 px */
 @media (min-width: 48em) {
+    
     .header{
-        margin-top: 2rem;    
+        padding-top: 2rem;    
     }
-    .service-offer, .email{
+
+    .header-left{
+        display: flex;
+    }
+
+    .email > p {
+        text-align: right;
+    }
+    
+    .name{
+        margin-right: 6.3125rem;
+    }
+    
+    .service-offer, 
+    .email {
         display: block;
     }
 
@@ -70,7 +82,8 @@
 /*1280px*/
 @media (min-width: 80em) { 
     .header > .header-left > .service-offer > p,
-    .header > .header-right > .email > p, a{
+    .header > .header-right > .email > p, 
+    a {
         font-size: var(--body-200);
     }
 
