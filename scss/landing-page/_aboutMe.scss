@@ -11,8 +11,7 @@
 
     position: relative;
     height: 27.75rem;
-    margin-bottom: 10.25rem;
-
+   
 }
 
 .profile-image{
@@ -49,42 +48,73 @@
 /*Profile Section under about me*/
 
 
-.current-status-section > p, .current-status-section >  div > p {
- 
-    font-family: "Nimbus";
-    font-size: var(--heading-400);
-    color: var(--white);
-}
-.current-status-section > p{
-    width: 100%;
-
-    margin: 0rem 0rem;
-    text-align: right;
-}
-
-.current-status-section > p {
- 
+/*Introduction Section under about me*/
+/*Introduction Section under about me*/
+.introduction-section {
+    padding-top: 11.9375rem;
     text-align: center;
 }
-
-.current-status-section > div  > p{
-    width: 100%;
-    margin: 0rem 0rem;
-    display: inline;    
-
-    text-align: center !important;   
+.introduction-section > p {
+    font-size: 5.4925rem;
 }
 
+.about-me-label {
+    font-family: "Monument Extended";
+    font-size: 0.875rem;
+    color: var(--light-blue);
+
+    display: none;
+
+}
+
+
+.introduction-context > p{
+    font-family: "Monument Extended";
+    font-weight: normal;
+    font-size: 0.625em;
+    line-height: 132%;
+    width: 17.901875rem;
+
+    margin: 0rem auto;
+}
+
+
+.introduction-context > p:first-child{
+    margin-top: 2.375rem;
+    margin-bottom: 2rem;
+}
+
+#nice-to-meet-you {
+    margin-top: 3rem;
+    width: 18.9rem;
+}
+/*Introduction Section under about me*/
+/*Introduction Section under about me*/
+
+
+
+
+
+
+/* Specialty Section */
+/* Specialty Section */
 .specialty-section {
-    padding-top: 21.125rem;
+    padding-top: 21rem;
     text-align: center;
 }
 
 .specialty-section >  p {
-    margin-right: 1rem !important;
+    width: 100%;
+    display: inline;
+    text-align: center;
+
+
+    font-family: "Nimbus";
+    font-size: var(--heading-400);
+    color: var(--white);
+    line-height: calc(var(--line-height) - 1.5px);
 }
-
-
+    
 #frontend {
     width: 13.189375rem;
 }
@@ -100,14 +130,18 @@
 #design {
     width: 12.2575rem;
 }
-
+/* Specialty Section */
+/* Specialty Section */
 
 /* 768 px */
 @media (min-width: 48em) {
-
+    
     .about-me {
         height: 100%;
     }
+
+    /*Profile Section under about me*/
+    /*Profile Section under about me*/
     .greetings {
         transform: translateY(-50%);
     }
@@ -119,7 +153,6 @@
         align-items: center;
         width: 100%;
         height: 100%;
-        margin-bottom: 24rem;
     }
     
     .profile-image{
@@ -128,39 +161,49 @@
         width: 24.9375rem;
         height: 37.625rem;
     }
+    /*Profile Section under about me*/
+    /*Profile Section under about me*/
 
-
-
-   
-
-    .current-status-section > p{
-        width: 100%;
-        font-size: var(--heading-300);
-        margin: 0rem 0rem;
-        text-align: center;
+    .introduction-section {
+        padding-top: 16rem;
     }
 
-    .current-status-section > div > p{
-        width: 100%;
-        font-size: var(--heading-300);
-        margin: 0rem 0rem;
-        display: inline;    
-
-        text-align: center ;
-       
-        
+    .introduction-section > p {
+        font-size: var(--heading-200);
     }
 
+
+    .introduction-context>  p{
+        font-size: var(--heading-200);
+        width: 34.125rem;
+    }
+
+    .introduction-context > p {
+        font-size: 1rem;
+    }
+
+    .introduction-context > p:first-child{
+        margin-top: 4.875rem;
+        margin-bottom: 2rem;
+    }
+    
+    #nice-to-meet-you {
+        margin-top: 4.4375zrem;
+        width: 31.903125rem;
+    }
+
+    /* Specialty Section */
+    /* Specialty Section */
     .specialty-section {
-          
-        display: inline-block;
-        text-align: center;
-        width: 100%;
-  
-    }
+        padding-top: 25.0625rem;
 
-    .specialty-section >  p {
-        margin-right: 1.5625rem !important;
+        p {
+            font-size: var(--heading-300);
+        }
+    }
+    .specialty-section >  p:first-child {
+        margin-right: 1.625rem;
+
     }
 
     #frontend{
@@ -169,6 +212,7 @@
 
     #development{
         width: 32.629375rem;
+        margin-right: 1.25rem;
     }
 
     #graphic{
@@ -178,6 +222,8 @@
     #design{
         width:20.138125rem;
     }
+    /* Specialty Section */
+    /* Specialty Section */
   
 }
 
@@ -196,7 +242,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 35.75rem;
     }
 
     .profile-image {
@@ -217,31 +262,65 @@
     /*Profile Section under about me*/
 
 
+    .introduction-section {
+        padding-top: 26.875rem;
+        text-align: left;
+    }
 
+    .introduction-context {
+        display: flex;
+        justify-content: end;
+        align-items: center;
 
-    .current-status-section {
+       
+    }
 
-        p{
-            margin-right: 0rem;
-            margin-left: auto;
-            width: 54.25rem;
-            text-align: right;
-        }
+    .context-section {
+        padding-top: 12.4375rem;
+    }
 
-        .specialty-section {
-            width: 64.3125rem;
-            text-align: left;
-            p {
-                width: 100%;
-                font-size: var(--heading-300);
-            }
+    .introduction-context > p {
+     
+        margin: 0rem;
+    }
+   
+    .introduction-context > p:first-child{
+        width: 28.625rem;
+        margin-top: 0rem;
+        margin-right: 2.5rem;
+    }
+    .introduction-context > p:last-child{
+        width: 28.625rem;
+        margin-top: 0rem;
+        width: 29.6875rem;
+    }
+
+    #nice-to-meet-you{
+        margin-left: 11.375rem;
+        margin-top: 6.0625rem;
+        width: 46.426875rem;
+        
+    }
+
+    .specialty-section {
+        width: 64.3125rem;
+        text-align: left;
+        p {
+            width: 100%;
+            font-size: var(--heading-300);
         }
     }
+
 }
 
 /*1440px*/
-@media (min-width: 90em) {
+@media (min-width: 80em) {
+    .about-me-label {
+  
     
+        display: block;
+    
+    }
 }
 
 
@@ -266,27 +345,11 @@
 
     .profile-image {
         background: url('../assets/png/desktop1920px/profile-image.png') no-repeat;
-        width: 33rem !important;
-        height: 49.75rem !important; 
+        width: 33rem;
+        height: 49.75rem ; 
     }
 
-    .current-status-section {
-       
-        p {
-            width: 88.125rem;
-            font-size: var(--heading-200);
-        }
-
-        .specialty-section {
-            width: 94.5rem;
-            padding-top: 31.875rem;
-          
-            p {
-               
-                font-size: var(--heading-200);
-            }
-        }
-    }
+   
 
     #frontend{
         width:  34.52875rem ;
@@ -302,5 +365,15 @@
 
     #design{
         width: 32.09rem;
+    }
+
+    .specialty-section {
+        width: 94.5rem;
+        padding-top: 31.875rem;
+      
+        p {
+           
+            font-size: var(--heading-200);
+        }
     }
 }

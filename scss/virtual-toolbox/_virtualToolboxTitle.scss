@@ -19,7 +19,7 @@
 }
 
 .toolbox-title{
-    font-size: calc(1rem + var(--heading-300)) !important;
+    font-size: calc(1rem + var(--heading-300));
 }
 
 
@@ -30,7 +30,7 @@
     }
 
     .toolbox-title {
-        font-size: var(--heading-100);
+        font-size: var(--heading-200);
     }
 }
 

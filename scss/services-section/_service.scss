@@ -20,25 +20,27 @@
 
 .service-number {
     font-family: 'Monument Extended';
-    font-size: var(--body-200);
+    font-size: var(--body-300);
     color: var(--light-blue)
 }
 
 .service-name {
-    font-family: 'Nimbus';
     font-size: var(--heading-400);
-    color: var(--white);
+
 }
 
 
 /* 768 px */
 @media (min-width: 48em) {
+    .service {
+        padding-bottom: 3rem;
+    }
     .services-offered {
         padding-top: 23.375rem;
     }
 
     .service-number{
-        font-size: var(--body-100);
+        font-size: var(--body-200);
     }
 
     .service-name {
@@ -73,5 +75,11 @@
 
 /*1920px*/
 @media (min-width: 120em) {
-   
+    .service {
+        padding: 4rem 0rem;
+    }
+    .service-name{
+        font-size: var(--display);
+        
+    }
 }

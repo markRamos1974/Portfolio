@@ -1,33 +1,43 @@
 .project-showcase {
     position: relative;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    box-sizing: border-box;
+    justify-content: space-between;
+
 }
-.project-tracker, .carousel-controls {
+.project-tracker {
     display: none;
 }
 
 //My Works
-.project-showcase > div:nth-child(1) > p {
-    font-size: var(--heading-300);
-    transform: translateX(-2rem);
-
-}
-
 .project-showcase > div:nth-child(3) >  div{
     display: flex;
-    justify-content: end;
+    justify-self: start;
 }
-.project-showcase > div:nth-child(3) >  div > p{
-    width: 27.9375rem;
-    margin-top: auto;
+.project-showcase > div:nth-child(1) > p:first-child {
     font-size: var(--heading-300);
-    transform: translateX(2rem);
+    transform: translateX(-3rem);
 }
 
+
+//Web Projects
+.project-showcase > div:nth-child(3) {
+    width: 27.9375rem;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+.project-showcase > div:nth-child(3) >  div { 
+    width: 27.9375rem;
+}
+.project-showcase > div:nth-child(3) >  div > p{
+    font-size: var(--heading-300);
+    transform: translateX(3rem);
+}
+
+
 .project-carousel {
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +59,7 @@
     width: 21rem;
     height: 12.6875rem; 
 }
+
 
 
 /* 768 px */
@@ -114,16 +125,19 @@
         justify-content: end;
     }
 
-    
-    
-    .project-showcase > div:nth-child(3) > div>  p {
-        align-self: end;
-        font-size: var(--heading-200);
-        text-align: right;
+
+    //Web Projects
+    .project-showcase > div:nth-child(3) {
         width: 44.9375rem;
-        transform: translateX(12.325rem);
-        
-        
+        align-self: flex-end;
+    }
+    .project-showcase > div:nth-child(3) >  div { 
+        width: 44.9375rem;
+    }
+    .project-showcase > div:nth-child(3) >  div > p{
+        font-size: var(--heading-200);
+        width: 44.9375rem;
+        transform: translateX(3rem);
     }
 
     .project-carousel {
@@ -192,9 +206,17 @@
         width: 58.25rem !important;
         transform: translateX(-5.75rem) !important;
     }
+
+    //Web Projects
+    .project-showcase > div:nth-child(3) {
+        width: 84.9375rem;
+    }
+    .project-showcase > div:nth-child(3) >  div { 
+        width: 84.9375rem;
+    }
     .project-showcase > div:nth-child(3) > div > p {
         width: 84.9375rem;
-        margin-left: calc((100vw - 21.4375rem * 8));
+        transform: translateX(24rem);
     }
 
     .burger-bite-img, .space-tourism-img{
